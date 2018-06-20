@@ -4,48 +4,25 @@ import java.util.Arrays;
 
 public class AlphabetLogic {
 
-    public static String checkLetter1(char letter) {
+    public static boolean checkLetter1(char letter) {
+        letter = Character.toLowerCase(letter);
 
-        boolean bool = false;
-        String response="It's "+ bool;
-
-        if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u' || letter == 'y'
-                || letter == 'A' || letter == 'E' || letter == 'I' || letter == 'O' || letter == 'U' || letter == 'Y') {
-
-            bool = true;
-            response = "It's "+bool;
-
-        }
-        return response;
+        return letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u' || letter == 'y';
     }
 
-    public static String checkLetter2(char letter) {
+    public static boolean checkLetter2(char letter) {
+        letter = Character.toLowerCase(letter);
+        String alphabet = "aeiouy";
 
-        boolean bool = false;
-        String alphabet = "aeiouyAEIOUY";
-        String response="It's "+ bool;
-
-        if (alphabet.indexOf(letter) != -1) {
-            bool = true;
-            response = "It's "+bool;
-        }
-
-        return response;
+        return alphabet.indexOf(letter) != -1;
     }
 
     public static String checkLetter3(char letter) {
-
+        letter = Character.toLowerCase(letter);
         boolean bool = false;
         String response;
 
         switch (letter) {
-
-            case 'A':
-            case 'E':
-            case 'I':
-            case 'O':
-            case 'U':
-            case 'Y':
             case 'a':
             case 'e':
             case 'i':
@@ -61,56 +38,40 @@ public class AlphabetLogic {
         return response;
     }
 
-    public static String checkLetter4(char letter) {
-
+    public static boolean checkLetter4(char letter) {
         boolean bool = false;
-        String response="It's "+bool;
+        letter = Character.toLowerCase(letter);
 
-        if (letter == 'a' || letter == 'A'  ) {
+        if (letter == 'a') {
             bool = true;
-            response="It's "+bool;
-        }else if (letter == 'e'|| letter == 'E') {
+        }else if (letter == 'e') {
             bool = true;
-            response="It's "+bool;
-        }else if (letter == 'i'|| letter == 'I') {
+        }else if (letter == 'i') {
             bool = true;
-            response="It's "+bool;
-        }else if (letter == 'o'|| letter == 'O') {
+        }else if (letter == 'o') {
             bool = true;
-            response="It's "+bool;
-        }else if (letter == 'u'|| letter == 'U') {
+        }else if (letter == 'u') {
             bool = true;
-            response="It's "+bool;
-        }else if (letter == 'y'|| letter == 'Y') {
+        }else if (letter == 'y') {
             bool = true;
-            response="It's "+bool;
         }
-
-        return response;
+        return bool;
     }
 
-    public static String checkLetter5(char letter){
-
+    public static boolean checkLetter5(char letter){
+        letter = Character.toLowerCase(letter);
         boolean bool=false;
-        String response=new String();
 
-        char[] vowels = new char[] {'a', 'e', 'i', 'o', 'u','A','E','I','O','U','Y'};
+
+        char[] vowels = new char[] {'a', 'e', 'i', 'o', 'u','y'};
         for (char c:vowels){
 
             if (letter==c){
 
-                response="It's "+bool;
-                break;
-
-            }else{
-
-
-                response="It's "+bool;
+                return true;
             }
-
         }
-
-        return response;
+        return false;
     }
 
 
